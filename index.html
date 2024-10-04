@@ -5,9 +5,211 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Karla Cáceres</title>
   </head>
   <body>
+    <header class="header">
+      <div class="switches">
+        <div id="toggle-theme" class="toggle-theme">
+          <img
+            id="toggle-icon"
+            src="assets/icons/sun.svg"
+            alt="icon theme"
+            class="toggle-theme__icon"
+          />
+          <p id="toggle-text" class="toggle-theme__text">Tema claro</p>
+        </div>
+      </div>
+      <div id="toggle-colors" class="colors">
+        <div
+          data-color="hsl(0, 70%, 60%)"
+          class="colors__item colors__item--verde"
+        ></div>
+        <div
+          data-color="hsl(210, 50%, 60%)"
+          class="colors__item colors__item--gris"
+        ></div>
+        <div
+          data-color="hsl(340, 100%, 88%)"
+          class="colors__item colors__item--morado"
+        ></div>
+        <div
+          data-color="hsl(210, 100%, 80%)"
+          class="colors__item colors__item--orange"
+        ></div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="column column--left">
+        <article class="card card--profile">
+          <div class="card__image-container">
+            <img src="assets/images/profile.jpg" alt="Imagen de perfil" />
+          </div>
+          <div class="card__header">
+            <h2 class="card__tittle">Karla Cáceres</h2>
+            <p class="card__subtittle">Estudiante Veterinaria</p>
+            <div class="card__body">
+              <div class="card__link">
+                <i class="fas fa-graduation-cap icon"></i>
+                <a href="https://www.udla.cl">Universidad de Las Américas</a>
+              </div>
+              <div class="card__link">
+                <i class="fas fa-envelope icon"></i>
+                <a href="mailto:karla.belen.caceres@gmail.com">karla.belen.caceres@gmail.com</a>
+              </div>
+              <div class="card__link">
+                <i class="fas fa-phone icon"></i>
+                <a href="tel:+56942016375">+56-942016375</a>
+              </div>
+              <p class="card__text">
+                Estudiante de Veterinaria con experiencia en atención de animales y manejo de clínicas. Mi propósito actualmente es enfocarme en la salud animal y el bienestar de las mascotas.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card--experience">
+          <h2 class="card__tittle">Experiencia</h2>
+          <div class="experience">
+            <img src="assets/images/logo.jpg" alt="logo" class="experience__image">
+            <div class="experience__info">
+              <p class="experience__time">
+                enero 2023 - junio 2023
+              </p>
+              <h3 class="experience__job">
+                Pasante Veterinaria
+              </h3>
+              <p class="experience__description">
+                Se apoyó en la atención de pacientes en la clínica veterinaria, asistiendo en procedimientos y consultas.
+              </p>
+            </div>
+          </div>
+          
+        </article>
+
+        <article class="card card--hobbies">
+          <h2 class="card__tittle">Hobbies</h2>
+          <div class="card__image-container">
+            <img src="assets/images/hobbie.jpg" alt="mis gustos">
+          </div>
+          <h3 class="hobbies__tittle">Cuidado de Animales</h3>
+          <p class="card__text">Me apasiona cuidar y entender el comportamiento de los animales. Disfruto de pasear a mis mascotas y aprender sobre su bienestar.</p>
+        </article>
+        
+      </section>
+      <section class="column column--right">
+        <article class="card">
+          <h2 class="card__tittle">Medicina general</h2>
+          <div class="skills">
+            <div class="skills__item">
+              <p class="skills__tech">Vacunación y med. prev.</p>
+              <div class="skills__bar skills__bar--80"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Enfermedades Felinas</p>
+              <div class="skills__bar skills__bar--90"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Enfermedades Caninas</p>
+              <div class="skills__bar skills__bar--90"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Nutrición Felina</p>
+              <div class="skills__bar skills__bar--90"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Nutrición Canina</p>
+              <div class="skills__bar skills__bar--90"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2 class="card__tittle">Vacas (Bovinos)</h2>
+          <div class="skills">
+            <div class="skills__item">
+              <p class="skills__tech">Anatomía y Fisiología</p>
+              <div class="skills__bar skills__bar--70"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Enfermedades Reprod.</p>
+              <div class="skills__bar skills__bar--60"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Enfermedades contagi.</p>
+              <div class="skills__bar skills__bar--70"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Nutrición en Ganado</p>
+              <div class="skills__bar skills__bar--60"></div>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <h2 class="card__tittle">Ovejas (Ovinos)</h2>
+          <div class="skills">
+            <div class="skills__item">
+              <p class="skills__tech">Anatomía y Fisiología</p>
+              <div class="skills__bar skills__bar--70"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Manejo de Parásitos</p>
+              <div class="skills__bar skills__bar--60"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Enfermedades Claves</p>
+              <div class="skills__bar skills__bar--70"></div>
+            </div>
+            <div class="skills__item">
+              <p class="skills__tech">Reproducción y Partos</p>
+              <div class="skills__bar skills__bar--60"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card--projects">
+          <article class="card card--project">
+            <div class="card__image-container">
+              <img src="assets/images/project.jpg" alt="proyectos" class="card__image">
+            </div>
+            <div class="project">
+              <div class="project__tags">
+                <span class="project__tag">#Cajón del Maipo</span>
+                <span class="project__tag">#desparasitacion</span>
+                <span class="project__tag">#Ovinos</span>
+              </div>
+              <h2 class="card__tittle">Proyecto de desparasitacion de Ovinos</h2>
+              <p class="card__text">parrafo que describe lo que se realizo y como se realizo.</p>
+              <p class="card__text">parrafo de reflexion con lo que me dificulto y lo que aprendi .</p>
+              <div class="button">
+                <a href="galeria.html" class="button--ghost">Ver Galeria</a>
+              </div>
+            </div>
+          </article>
+          <article class="card card--project">
+            <div class="card__image-container">
+              <img src="assets/images/project.jpg" alt="proyectos" class="card__image">
+            </div>
+            <div class="project">
+              <div class="project__tags">
+                <span class="project__tag">#saludanimal</span>
+                <span class="project__tag">#bienestaranimal</span>
+              </div>
+              <h2 class="card__tittle">Campaña de Vacunación</h2>
+              <p class="card__text">parrafo que describe lo que se realizo y como se realizo.</p>
+              <p class="card__text">parrafo de reflexion con lo que me dificulto y lo que aprendi .</p>
+              <div class="button">
+                <a href="galeria.html" class="button--ghost">Ver Galeria</a>
+              </div>
+            </div>
+          </article>
+        </article>
+      </section>
+    </main>
     <script src="js/scripts.js"></script>
   </body>
 </html>

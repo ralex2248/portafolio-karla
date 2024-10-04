@@ -1,1 +1,670 @@
+:root {
+    --primary-color: hsl(0, 70%, 60%); /* Rojo claro */
+    --text-color: hsl(0, 0%, 30%);
+    --bg-color: hsl(323, 49%, 92%); /* Lila claro y pastel */
+    --bg-card-color: hsl(270, 70%, 90%); /* Lila claro y pastel */   
+    --transition: color 0.4s, background-color 0.5s ease-in-out;
+    --border-radius: 0.4em;
+    --skills-bar-length: 0%;
+}
+
+body.dark {
+    --text-color: hsl(0, 0%, 85%);
+    --bg-color: hsl(270, 40%, 30%); /* Morado pastel oscuro */
+    --bg-card-color: hsl(270, 50%, 35%); /* Morado más claro */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    padding: 0 1.5em;
+    background-color: var(--bg-card-color);
+    transition: var(--transition);
+    width: 100%; /* Asegura que el encabezado ocupe todo el ancho */
+    position: relative; /* Necesario para el posicionamiento */
+}
+
+/* Para evitar que los colores caigan a otra fila */
+.switches {
+    display: flex;
+    align-items: center; /* Alinear verticalmente los elementos dentro de switches */
+    justify-content: flex-end; /* Alinear a la derecha */
+    flex-shrink: 0; /* Evitar que se reduzcan en tamaño */
+}
+
+/* Consultas de medios para hacer el encabezado responsivo */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: row; /* Mantener en fila incluso en pantallas más pequeñas */
+        height: auto; /* Permitir que el alto se ajuste al contenido */
+        padding: 1em; /* Añadir padding para mejor espaciado */
+        align-items: center; /* Alinear elementos verticalmente en el centro */
+        width: 100%; /* Asegura que el encabezado ocupe todo el ancho de la ventana */
+    }
+}
+
+@media (max-width: 515px) {
+    .header {
+        height: auto; /* Permitir que la altura se ajuste al contenido */
+        padding: 0.5em; /* Reducir padding en pantallas muy pequeñas */
+    }
+}
+
+
+
+.switches {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.toggle-theme {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: url('https://cur.cursors-4u.net/nature/nat-2/nat180.cur'), auto;
+}
+
+.toggle-theme__icon {
+    margin-right: 0.5em;
+    width: 25px;
+}
+
+.toggle-theme__text {
+    font-size: 0.8rem;
+}
+
+.colors {
+    display: flex;
+    gap: 1em;
+}
+
+.colors__item {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: url('https://cur.cursors-4u.net/nature/nat-2/nat180.cur'), auto;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.colors__item:active {
+    transform: scale(0.9);
+}
+
+.colors__item.selected {
+    border: 2px solid var(--primary-color);
+}
+
+.colors__item:hover {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.1);
+}
+
+.colors__item--verde {
+    background-color: hsl(0, 70%, 60%);
+}
+
+.colors__item--gris {
+    background-color: hsl(210, 50%, 60%);
+}
+
+.colors__item--morado {
+    background-color: hsl(340, 100%, 88%);
+}
+
+.colors__item--orange {
+    background-color: hsl(210, 100%, 80%);
+}
+
+.tittle {
+    text-align: center;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.main {
+    display: grid;
+    padding: 0.3em;
+}
+
+@media screen and (min-width: 720px) {
+    .main {
+        grid-template-columns: min-content 1fr;
+    }
+}
+
+.column {
+    display: grid;
+    gap: 0.5em;
+}
+
+@media screen and (min-width: 720px) {
+    .column--right {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, min-content);
+    }
+}
+
+.card {
+    padding: 1em;
+    background-color: var(--bg-card-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    margin: 0.1em;
+}
+
+.card__image-container {
+    min-width: 320px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.card__header {
+    padding: 1em 0;
+}
+
+.card__tittle {
+    margin: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+}
+
+.card__subtittle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.card__link {
+    margin-bottom: 0.5em;
+}
+
+.card__text {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    flex: 1 1 65%;
+    margin-left: 10px;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 760px) {
+    .card--projects {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-column: 1 / -1;
+    }
+}
+
+.skills {
+    padding: 1em 0;
+}
+
+.skills__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.skills__tech {
+    min-width: 100px;
+    margin-right: 10px;
+    text-align: left;
+    margin: 0.2em;
+}
+
+.skills__bar {
+    flex-grow: 1;
+    position: relative;
+    height: 8px;
+    background-color: #888;
+    transition: var(--transition);
+    border-radius: 5px;
+    margin: 0;
+}
+
+.skills__bar::after {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    background-color: var(--primary-color);
+    height: 100%;
+    transition: var(--transition);
+    width: var(--skills-bar-length);
+}
+
+.skills__bar--10::after {
+    width: 10%;
+}
+
+.skills__bar--20::after {
+    width: 20%;
+}
+
+.skills__bar--30::after {
+    width: 30%;
+}
+
+.skills__bar--40::after {
+    width: 40%;
+}
+
+.skills__bar--50::after {
+    width: 50%;
+}
+
+.skills__bar--60::after {
+    width: 60%;
+}
+
+.skills__bar--70::after {
+    width: 70%;
+}
+
+.skills__bar--80::after {
+    width: 80%;
+}
+
+.skills__bar--90::after {
+    width: 90%;
+}
+
+.skills__bar--100::after {
+    width: 100%;
+}
+
+.experience {
+    display: flex;
+    align-items: start;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.experience__image {
+    max-width: 15%;
+    border-radius: 25%;
+    margin-right: 7px;
+}
+
+.experience__job {
+    margin: 0;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.experience__description {
+    font-size: 0.8rem;
+    margin-bottom: 1.5em;
+}
+
+.experience__time {
+    font-size: 0.8rem;
+    margin-bottom: 0.5em;
+}
+
+@media screen and (min-width: 760px) {
+    .project {
+        margin-left: 2em;
+    }
+}
+
+.project__tags {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0;
+    font-size: 0.6rem;
+    width: 275px;
+}
+.project__tag {
+    padding: 0.4em 0.8em;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--bg-card-color);
+}
+
+@media screen and (min-width: 760px) {
+    .project__tags {
+        font-size: 0.8rem;
+        width: 325px;
+    }
+}
+
+.project {
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.card--projects {
+    display: flex;
+    flex-direction: column; /* Cambiado para que los proyectos se apilen uno sobre otro */
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: var(--border-radius);
+    gap: 1em; /* Espacio entre las tarjetas */
+}
+
+.card--project {
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 16px;
+    display: flex;
+    flex-direction: row; /* Cambiado a fila para alinear imagen y contenido */
+    flex: 1 1 100%; /* Cada tarjeta ocupará el 100% del ancho */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    margin-bottom: 1em; /* Espacio entre las tarjetas */
+}
+
+.card__image-container {
+    max-width: 200px; /* Añadido un ancho máximo para limitar el tamaño */
+
+}
+
+.card__content {
+    flex: 1; /* Para ocupar el espacio restante */
+    display: flex;
+    flex-direction: column; /* Organizar datos del proyecto en columna */
+}
+
+@media screen and (max-width: 720px) {
+    .card--project {
+        flex: 1 1 100%; /* Cada tarjeta ocupará el 100% del ancho en pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card--projects {
+        flex-direction: column; /* Cambiar a columna en pantallas muy pequeñas */
+    }
+
+    .card--project {
+        flex: 1 1 100%; /* Cada tarjeta ocupará el 100% del ancho */
+        margin-bottom: 1em; /* Espacio entre las tarjetas */
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end; /* Alinear los botones a la derecha */
+    margin-top: auto; /* Empujar los botones al final del contenido */
+    width: 100%;
+}
+
+.button {
+    width: auto;
+    line-height: 2.5;
+    text-align: center;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    margin-left: 10px;
+}
+
+.button--ghost {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.button--ghost:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    cursor: url('https://cur.cursors-4u.net/nature/nat-2/nat180.cur'), auto;
+}
+
+.icon {
+    margin-right: 1em;
+}
+
+
+.gallery {
+    padding: 20px;
+}
+
+.gallery__images {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias filas */
+    justify-content: flex-start; /* Alinear los elementos desde la izquierda */
+    gap: 20px; /* Espacio uniforme entre los elementos en lugar de margin */
+}
+
+.gallery__item {
+    flex: 0 1 calc(20% - 20px); /* Ajustar al 20% para cinco elementos por fila con espacio */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de agrandamiento */
+}
+
+
+.gallery__item:hover {
+    transform: scale(1.1); /* Agrandar la imagen un 10% al pasar el mouse */
+    z-index: 1; /* Asegura que la imagen ampliada esté por encima de las demás */
+}
+
+.gallery__image {
+    width: 100%; /* Hacer que la imagen ocupe el 100% del contenedor */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+    object-fit: contain; /* Mantener la proporción de aspecto y asegurarse de que la imagen esté contenida */
+    border-radius: calc(var(--border-radius) - 2px); /* Bordes redondeados, ajustando por el borde */
+    padding: 5px; /* Espacio entre la imagen y el borde */
+    background-color: var(--bg-card-color); /* Color de fondo para el espacio entre la imagen y el borde */
+    transition: transform 0.3s ease; /* Transición suave para la imagen */
+}
+
+.gallery__item:hover .gallery__image {
+    transform: scale(1.1); /* Agrandar la imagen un 10% al pasar el mouse */
+}
+
+/* Consultas de medios para hacer la galería responsiva */
+@media (max-width: 1200px) {
+    .gallery__item {
+        flex: 0 1 calc(25% - 20px); /* Cuatro elementos por fila en pantallas medianas */
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery__item {
+        flex: 0 1 calc(33.33% - 20px); /* Tres elementos por fila en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery__item {
+        flex: 0 1 calc(50% - 20px); /* Dos elementos por fila en pantallas muy pequeñas */
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery__item {
+        flex: 0 1 calc(100% - 20px); /* Un elemento por fila en pantallas ultra pequeñas */
+    }
+}
+
+
+/* Consultas de medios para hacer el encabezado responsivo */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column; /* Cambiado a columna para pantallas más pequeñas */
+        height: auto; 
+        padding: 1em;
+        align-items: flex-start; /* Alinear elementos a la izquierda */
+    }
+}
+
+@media (max-width: 515px) {
+    .header {
+        padding: 0.5em; /* Reducir padding en pantallas muy pequeñas */
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .card--projects {
+        flex-direction: column; /* Cambiado para que los proyectos se apilen uno sobre otro */
+    }
+
+    .card--project {
+        flex-direction: column; /* Cambiado a columna para alinear imagen y contenido */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        grid-template-columns: 1fr; /* Un solo elemento en fila en pantallas pequeñas */
+    }
+
+    .project__tags {
+        font-size: 0.7rem; /* Ajustar el tamaño de la fuente en pantallas más pequeñas */
+    }
+
+    .experience__image {
+        max-width: 30%; /* Cambiar el ancho de la imagen de experiencia en pantallas pequeñas */
+    }
+
+    .experience__description,
+    .experience__time {
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente para descripción y tiempo */
+    }
+}
+
+@media (max-width: 480px) {
+    .card--projects {
+        flex-direction: column; /* Cambiar a columna en pantallas muy pequeñas */
+    }
+
+    .card--project {
+        flex: 1 1 100%; /* Cada tarjeta ocupará el 100% del ancho */
+        margin-bottom: 1em; /* Espacio entre las tarjetas */
+    }
+
+}
+
+
+
+
+/* Consultas de medios para hacer el encabezado responsivo */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column; /* Cambiado a columna para pantallas más pequeñas */
+        height: auto; 
+        padding: 1em;
+        align-items: flex-start; /* Alinear elementos a la izquierda */
+    }
+}
+
+@media (max-width: 515px) {
+    .header {
+        padding: 0.5em; /* Reducir padding en pantallas muy pequeñas */
+    }
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .card--projects {
+        flex-direction: column; /* Cambiar a columna en pantallas muy pequeñas */
+        padding: 0; /* Sin padding en contenedor de proyectos */
+    }
+
+    .card--project {
+        flex: 1 1 100%; /* Cada tarjeta ocupará el 100% del ancho */
+        margin-bottom: 1em; /* Espacio entre las tarjetas */
+        padding: 1em; /* Añadir un padding interno para espacio */
+    }
+
+    .gallery__item {
+        flex: 0 1 calc(100% - 20px); /* Un elemento por fila en pantallas ultra pequeñas */
+    }
+
+    .gallery__image {
+        height: 120px; /* Ajustar altura de la imagen para que se vea mejor en pantallas pequeñas */
+    }
+
+    .experience__image {
+        max-width: 40%; /* Cambiar el ancho de la imagen de experiencia en pantallas pequeñas */
+    }
+
+    .experience__description,
+    .experience__time {
+        font-size: 0.7rem; /* Reducir el tamaño de la fuente para descripción y tiempo */
+    }
+
+    .project__tags {
+        font-size: 0.6rem; /* Ajustar el tamaño de la fuente en pantallas más pequeñas */
+    }
+
+    .button {
+        font-size: 0.9rem; /* Reducir el tamaño del botón */
+        padding: 8px 16px; /* Ajustar padding del botón */
+    }
+
+    .toggle-theme__text {
+        font-size: 0.7rem; /* Reducir el tamaño del texto del tema */
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .gallery__item {
+        flex: 0 1 100%; /* Un elemento por fila ocupando todo el ancho */
+        margin-bottom: 0; /* Eliminar el margen inferior */
+    }
+
+    .gallery__image {
+        height: auto; /* Ajustar altura automáticamente */
+        object-fit: cover; /* Asegura que las imágenes cubran el contenedor sin perder proporción */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery__item {
+        flex: 0 1 100%; /* Un elemento por fila ocupando todo el ancho */
+        margin-bottom: 0; /* Eliminar el margen inferior */
+    }
+
+    .gallery__image {
+        height: auto; /* Ajustar altura automáticamente */
+        object-fit: cover; /* Asegura que las imágenes cubran el contenedor sin perder proporción */
+    }
+}
 
