@@ -88,7 +88,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    cursor: url('https://cur.cursors-4u.net/nature/nat-2/nat180.cur'), auto;
+    cursor: url(https://cur.cursors-4u.net/nature/nat-8/nat728.cur), auto;
 }
 
 .toggle-theme__icon {
@@ -109,7 +109,7 @@ body {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    cursor: url('https://cur.cursors-4u.net/nature/nat-2/nat180.cur'), auto;
+    cursor: url(https://cur.cursors-4u.net/nature/nat-8/nat728.cur), auto;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -446,7 +446,7 @@ body {
 .button--ghost:hover {
     background-color: transparent;
     color: var(--primary-color);
-    cursor: url('https://cur.cursors-4u.net/nature/nat-2/nat180.cur'), auto;
+    cursor: url(https://cur.cursors-4u.net/nature/nat-8/nat728.cur), auto;
 }
 
 .icon {
@@ -668,3 +668,22 @@ body {
     }
 }
 
+
+
+
+
+.card--certificados {
+    display: flex;
+    flex-direction: column; /* Apilar la imagen y el contenido verticalmente */
+}
+
+.card--certificados .card__image-container {
+    width: 100%; /* Hacer que la imagen ocupe todo el ancho */
+    max-width: none; /* Para asegurarnos de que no haya un límite en el ancho */
+    overflow: hidden; /* Asegurar que la imagen no sobresalga */
+}
+
+.card--certificados .card__image {
+    width: 100%; /* Hacer que la imagen se estire horizontalmente */
+    height: auto; /* Mantener la proporción de la imagen */
+}
