@@ -751,7 +751,7 @@ body {
     }
 
     .gallery__item {
-        flex: 0 1 calc(32.9% - 10px); /* Ajustar para que haya solo 3 elementos por fila */
+        flex: 0 1 calc(32.5% - 10px); /* Ajustar para que haya solo 3 elementos por fila */
         justify-content: center;
     }
 
@@ -777,6 +777,7 @@ body {
         flex-direction: column;
         align-items: center;
         width: 70%; /* Ajusta según el espacio que necesites */
+        overflow: auto;
     }
     
     .fila--header {
