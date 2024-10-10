@@ -693,7 +693,7 @@ body {
 
 
 
-@media (max-width: 768px) and (orientation: landscape) {
+@media (max-width: 1200px) and (orientation: landscape) {
     .header {
         flex-direction: column; /* Cambiar a columna para evitar que se superpongan */
         height: auto;
@@ -732,7 +732,7 @@ body {
 }
 
 
-@media only screen and (orientation: landscape) {
+@media (max-width: 1200px) and (orientation: landscape) {
     .column--left {
         display: flex;
         flex-direction: column; /* Asegura que los artículos se apilen verticalmente */
@@ -758,7 +758,7 @@ body {
 }
 
 
-@media only screen and (orientation: landscape) {
+@media (max-width: 1200px) and (orientation: landscape) {
     .card--project {
         display: flex;
         flex-direction: column; /* Cambia el diseño a columna para que el contenido se coloque debajo de la imagen */
@@ -795,7 +795,7 @@ body {
     }
 }
 
-@media only screen and (orientation: landscape) {
+@media (max-width: 1200px) and (orientation: landscape) {
     .skills {
         display: flex;
         flex-direction: column;
@@ -825,7 +825,7 @@ body {
     }
 }
 
-@media only screen and (orientation: landscape) {
+@media (max-width: 1200px) and (orientation: landscape) {
     .skills {
         display: flex;
         flex-direction: column; /* Alinea los elementos en una columna */
