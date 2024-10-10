@@ -767,6 +767,12 @@ body {
         display: flex;
         flex-direction: column; /* Asegura que los artículos se apilen verticalmente */
         align-items: center; /* Centra todos los elementos en la columna */
+        margin-left: 0.2em;
+    }
+    .fila--header {
+        display: flex;
+        flex-direction: column; /* Asegura que los artículos se apilen verticalmente */
+        align-items: center; /* Centra todos los elementos en la columna */
     }
 
     .card--profile {
