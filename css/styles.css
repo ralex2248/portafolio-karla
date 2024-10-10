@@ -762,13 +762,23 @@ body {
 }
 
 
-@media (max-width: 1200px) and (orientation: landscape) {
+@media (min-width: 1200px) and (orientation: landscape) {
     .column--left {
         display: flex;
-        flex-direction: column; /* Asegura que los artículos se apilen verticalmente */
-        align-items: center; /* Centra todos los elementos en la columna */
-        margin-left: 0.2em;
+        flex-direction: column;
+        align-items: center;
+        width: 30%; /* Ajusta el ancho según tus necesidades */
+        min-width: 250px; /* Asegura un ancho mínimo */
+        overflow: auto; /* Permite desplazamiento si es necesario */
     }
+    
+    .column--right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%; /* Ajusta según el espacio que necesites */
+    }
+    
     .fila--header {
         display: flex;
         flex-direction: column; /* Asegura que los artículos se apilen verticalmente */
