@@ -719,130 +719,43 @@ body {
 
 
 
-@media (max-width: 1200px) and (orientation: landscape) {
+@media (min-width: 800px) and (max-width: 1024px) and (orientation: landscape) {
     .header {
-        flex-direction: column; /* Cambiar a columna para evitar que se superpongan */
+        flex-direction: column;
         height: auto;
         padding: 1em;
         align-items: center;
         width: 100%;
-        
     }
 
     .card--projects {
-        flex-direction: column; /* Cambiar a columna para asegurar que se adapten bien */
+        flex-direction: column;
         padding: 0.5em;
         margin-bottom: 0.5em;
     }
 
     .card--project {
-        flex-direction: column; /* Cambiar a columna para que la imagen esté encima del contenido */
-        max-width: 90%; /* Ajustar el ancho para que no se vea demasiado comprimido */
-        margin: 0 auto; /* Centrar las tarjetas */
-    }
-
-    .card__image-container {
-        max-width: 100%; /* Asegurar que la imagen ocupe todo el ancho en modo horizontal */
-        margin-bottom: 0.5em;
-    }
-
-    .skills__bar {
-        width: 100%;
-    }
-
-    .gallery__item {
-        flex: 0 1 calc(32.5% - 10px); /* Ajustar para que haya solo 3 elementos por fila */
-        justify-content: center;
-    }
-
-    .gallery__image {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-
-@media (min-width: 1200px) and (orientation: landscape) {
-    .column--left {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 30%; /* Ajusta el ancho según tus necesidades */
-        min-width: 250px; /* Asegura un ancho mínimo */
-        overflow: auto; /* Permite desplazamiento si es necesario */
-    }
-    
-    .column--right {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 70%; /* Ajusta según el espacio que necesites */
-        overflow: auto;
-    }
-    
-    .fila--header {
-        display: flex;
-        flex-direction: column; /* Asegura que los artículos se apilen verticalmente */
-        align-items: center; /* Centra todos los elementos en la columna */
-    }
-
-    .card--profile {
-        text-align: center; /* Centra el texto dentro de la tarjeta */
-    }
-
-    .card--profile .card__image-container {
-        display: flex;
-        justify-content: center; /* Centra la imagen horizontalmente */
-        width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-    }
-
-    .card--profile img {
-        display: block;
-        max-width: 100%; /* Ajusta el tamaño de la imagen para que no se salga de los márgenes */
-        height: auto; /* Mantiene la relación de aspecto */
-        margin: 0 auto; /* Centra la imagen en el contenedor */
-    }
-}
-
-
-@media (max-width: 1200px) and (orientation: landscape) {
-    .card--project {
-        display: flex;
-        flex-direction: column; /* Cambia el diseño a columna para que el contenido se coloque debajo de la imagen */
-        align-items: center; /* Centra los elementos */
         text-align: center;
-        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     .card__image-container {
-        width: 100%; /* Usa el ancho completo disponible */
+        width: 100%;
         display: flex;
-        justify-content: center; /* Centra la imagen horizontalmente */
-        margin-bottom: 15px; /* Añade espacio debajo de la imagen */
+        justify-content: center;
+        margin-bottom: 0.5em;
     }
 
     .card__image {
         max-width: 100%;
         height: auto;
         display: block;
-        margin: 0 auto;
     }
 
-    .project {
-        padding: 0 15px;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: left; /* Cambia a izquierda para una mejor lectura, si prefieres */
-    }
-
-    .button {
-        display: flex;
-        justify-content: center; /* Centra el botón al final */
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 1200px) and (orientation: landscape) {
     .skills {
         display: flex;
         flex-direction: column;
@@ -853,10 +766,10 @@ body {
 
     .skills__list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Cambia a una cuadrícula flexible */
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 10px;
         width: 100%;
-        max-width: 500px; /* Ajusta según el ancho que prefieras */
+        max-width: 500px;
         margin: 0 auto;
         justify-items: center;
     }
@@ -870,19 +783,9 @@ body {
         width: 100%;
         box-sizing: border-box;
     }
-}
-
-@media (max-width: 1200px) and (orientation: landscape) {
-    .skills {
-        display: flex;
-        flex-direction: column; /* Alinea los elementos en una columna */
-        gap: 10px;
-        width: 100%;
-        padding: 10px;
-    }
 
     .skills__item {
-        width: 100%; /* Ocupa el 100% del ancho disponible */
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -894,9 +797,19 @@ body {
     }
 
     .skills__bar {
-        width: 90%; /* Ajusta el ancho de la barra para que no se salga */
+        width: 90%;
         height: 8px;
         border-radius: 4px;
         margin: 0 auto;
+    }
+
+    .gallery__item {
+        flex: 0 1 calc(32.5% - 10px);
+        justify-content: center;
+    }
+
+    .gallery__image {
+        width: 100%;
+        justify-content: center;
     }
 }
