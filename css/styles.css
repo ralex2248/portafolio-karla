@@ -719,7 +719,7 @@ body {
 
 
 
-@media (min-width: 800px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 760px) and (max-width: 1024px) and (orientation: landscape) {
     .header {
         flex-direction: column;
         height: auto;
