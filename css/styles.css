@@ -73,6 +73,7 @@ body {
     .header {
         height: auto; /* Permitir que la altura se ajuste al contenido */
         padding: 0.5em; /* Reducir padding en pantallas muy pequeñas */
+        width: 100%;
     }
 }
 
@@ -188,6 +189,7 @@ body {
 
 .card__header {
     padding: 1em 0;
+    width: 100%;
 }
 
 .card__tittle {
@@ -525,11 +527,13 @@ body {
         height: auto; 
         padding: 1em;
         align-items: flex-start; /* Alinear elementos a la izquierda */
+        width: 100%;
     }
 }
 
 @media (max-width: 515px) {
     .header {
+        width: 100%;
         padding: 0.5em; /* Reducir padding en pantallas muy pequeñas */
     }
 }
@@ -585,12 +589,14 @@ body {
         height: auto; 
         padding: 1em;
         align-items: flex-start; /* Alinear elementos a la izquierda */
+        width: 100%;
     }
 }
 
 @media (max-width: 515px) {
     .header {
         padding: 0.5em; /* Reducir padding en pantallas muy pequeñas */
+        width: 100%;
     }
 }
 
@@ -699,6 +705,7 @@ body {
         height: auto;
         padding: 1em;
         align-items: center;
+        width: 100%;
     }
 
     .card--projects {
