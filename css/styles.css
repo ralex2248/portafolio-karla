@@ -687,3 +687,71 @@ body {
     width: 100%; /* Hacer que la imagen se estire horizontalmente */
     height: auto; /* Mantener la proporción de la imagen */
 }
+
+
+
+
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .header {
+        flex-direction: column; /* Cambiar a columna para evitar que se superpongan */
+        height: auto;
+        padding: 1em;
+        align-items: center;
+    }
+
+    .card--projects {
+        flex-direction: column; /* Cambiar a columna para asegurar que se adapten bien */
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .card--project {
+        flex-direction: column; /* Cambiar a columna para que la imagen esté encima del contenido */
+        max-width: 90%; /* Ajustar el ancho para que no se vea demasiado comprimido */
+        margin: 0 auto; /* Centrar las tarjetas */
+    }
+
+    .card__image-container {
+        max-width: 100%; /* Asegurar que la imagen ocupe todo el ancho en modo horizontal */
+        margin-bottom: 0.5em;
+    }
+
+    .skills__bar {
+        width: 100%;
+    }
+
+    .gallery__item {
+        flex: 0 1 calc(33% - 10px); /* Ajustar para que haya solo 3 elementos por fila */
+    }
+
+    .gallery__image {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (orientation: landscape) {
+    .column--left {
+        display: flex;
+        flex-direction: column; /* Asegura que los artículos se apilen verticalmente */
+        align-items: center; /* Centra todos los elementos en la columna */
+    }
+
+    .card--profile {
+        text-align: center; /* Centra el texto dentro de la tarjeta */
+    }
+
+    .card--profile .card__image-container {
+        display: flex;
+        justify-content: center; /* Centra la imagen horizontalmente */
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    }
+
+    .card--profile img {
+        display: block;
+        max-width: 100%; /* Ajusta el tamaño de la imagen para que no se salga de los márgenes */
+        height: auto; /* Mantiene la relación de aspecto */
+        margin: 0 auto; /* Centra la imagen en el contenedor */
+    }
+}
